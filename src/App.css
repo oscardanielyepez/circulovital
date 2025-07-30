@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* --- Nueva Paleta de Colores (Tonos Azul-Verde) --- */
+:root {
+  --primary-color: #1AD5DA;
+  /* Color principal especificado para el título */
+  --primary-hover: #18C2C7;
+  /* Tono ligeramente más oscuro para efectos hover */
+  --gradient-secondary: #69AFBF;
+  /* Color de la paleta para usar en gradientes */
+  --pale-background: #C4EEF2;
+  /* El color más claro de la paleta para fondos */
+  --dark-text: #010D26;
+  /* Se mantiene para máxima legibilidad del texto */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --- Estilos Generales y Clases de Utilidad --- */
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* El gradiente principal ahora usa la nueva paleta */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--gradient-secondary) 100%);
+}
+
+.text-primary-custom {
+  color: var(--primary-color);
+}
+
+.text-dark-custom {
+  color: var(--dark-text);
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color);
+}
+
+.bg-pale-blue {
+  /* Renombramos esta clase mentalmente a "bg-pale-custom" */
+  background-color: var(--pale-background);
+}
+
+.section-spacing {
+  padding: 80px 0;
+}
+
+/* --- Estilos de Botones con la nueva paleta --- */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--dark-text);
+  /* Texto oscuro para mejor contraste sobre el color primario claro */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--dark-text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(26, 213, 218, 0.3);
+}
+
+.btn-outline-custom {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--dark-text);
+  font-weight: 500;
+  transform: translateY(-2px);
+}
+
+/* --- Estilos de Componentes Específicos --- */
+.navbar-custom {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(26, 213, 218, 0.1);
+}
+
+.hero-content {
+  padding-top: 160px;
+  padding-bottom: 120px;
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-counter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  background: linear-gradient(135deg, var(--primary-color), var(--gradient-secondary));
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto 20px;
   color: white;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin: 15px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  font-size: 4rem;
+  color: var(--pale-background);
+  font-family: serif;
+}
+
+.contact-form {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-float-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+}
+
+/* Estilos para el Logo en la Navbar */
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.vfelices {
+  max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.blog-card-image {
+  height: 200px;
+  /* Define una altura fija para la imagen */
+  object-fit: cover;
+  /* Evita que la imagen se deforme */
+  width: 100%;
+}
+
+.testimonial-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* Esto hace la imagen redonda */
+  object-fit: cover;
+  /* Evita que la imagen se deforme */
+  margin-right: 15px;
+  /* Espacio entre la imagen y el nombre */
 }
