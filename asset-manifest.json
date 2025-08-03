@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/circulovital/static/css/main.25b4a36e.css",
-    "main.js": "/circulovital/static/js/main.89012b28.js",
+    "main.css": "/circulovital/static/css/main.fef91304.css",
+    "main.js": "/circulovital/static/js/main.1def3ebf.js",
     "static/media/blog-actividad-fisica.jpg": "/circulovital/static/media/blog-actividad-fisica.188a81e036ea60e007f9.jpg",
     "static/media/v_felices.jpg": "/circulovital/static/media/v_felices.5b93f40d7e0f32ecdb3e.jpg",
+    "static/media/equipo-circulo-vital.jpg": "/circulovital/static/media/equipo-circulo-vital.944e83a93d38ac92db6b.jpg",
     "static/media/blog-cuidado-casa.jpg": "/circulovital/static/media/blog-cuidado-casa.663ea8bf53d0950882c5.jpg",
     "static/media/testimonio-carlos.jpg": "/circulovital/static/media/testimonio-carlos.1f340e1fbd859462fbf6.jpg",
     "static/media/blog-nutricion.jpg": "/circulovital/static/media/blog-nutricion.7438b9d5091be4f65c32.jpg",
@@ -11,11 +12,11 @@
     "static/media/testimonio-maria.jpg": "/circulovital/static/media/testimonio-maria.38c550e58c36b569e1f0.jpg",
     "static/media/logo.png": "/circulovital/static/media/logo.2524bec667bf18d9f350.png",
     "index.html": "/circulovital/index.html",
-    "main.25b4a36e.css.map": "/circulovital/static/css/main.25b4a36e.css.map",
-    "main.89012b28.js.map": "/circulovital/static/js/main.89012b28.js.map"
+    "main.fef91304.css.map": "/circulovital/static/css/main.fef91304.css.map",
+    "main.1def3ebf.js.map": "/circulovital/static/js/main.1def3ebf.js.map"
   },
   "entrypoints": [
-    "static/css/main.25b4a36e.css",
-    "static/js/main.89012b28.js"
+    "static/css/main.fef91304.css",
+    "static/js/main.1def3ebf.js"
   ]
 }
