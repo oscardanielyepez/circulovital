@@ -213,3 +213,72 @@ body {
   margin-right: 15px;
   /* Espacio entre la imagen y el nombre */
 }
+
+/* --- Estilos para la lista de planes interactiva --- */
+.plan-item {
+  /* Prepara el contenedor para la animación */
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-action {
+  /* Contenedor para el precio y el botón */
+  min-width: 120px;
+  /* Ancho mínimo para que no se deforme */
+  text-align: center;
+}
+
+.plan-price,
+.plan-button {
+  /* Define la transición suave para ambos elementos */
+  transition: all 0.3s ease-in-out;
+}
+
+.plan-button {
+  /* Por defecto, el botón está oculto y ligeramente desplazado */
+  opacity: 0;
+  transform: translateY(10px);
+  position: absolute;
+  right: 1rem;
+  /* Alineado a la derecha del contenedor del plan */
+  top: 50%;
+  margin-top: -19px;
+  /* Centrado verticalmente (la mitad de su altura) */
+}
+
+/* LA MAGIA SUCEDE AQUÍ */
+.plan-item:hover .plan-price {
+  /* Al pasar el mouse sobre el plan, el precio se vuelve invisible */
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.plan-item:hover .plan-button {
+  /* Al pasar el mouse sobre el plan, el botón se vuelve visible y aparece en su sitio */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Estilos para la página de Login --- */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--pale-background);
+  /* Reutilizamos el color de fondo pálido */
+}
+
+.login-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-logo {
+  height: 60px;
+}

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import { blogData } from '../data/blogData';
 import vfelices from '../assets/v_felices.jpg';
-import { testimonialsData } from '../data/testimonialsData'; // <-- Importa los nuevos datos
+import teamImage from '../assets/equipo-circulo-vital.jpg';
+import { testimonialsData } from '../data/testimonialsData'; 
+import { HashLink } from 'react-router-hash-link';
 
 const HomePage = () => {
     return (
@@ -113,13 +115,11 @@ const HomePage = () => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 mb-5 mb-lg-0">
-                            <div className="bg-white rounded-3 p-5 text-center" style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <div>
-                                    <i className="fas fa-users fa-4x text-primary-custom mb-3"></i>
-                                    <h4>IMAGEN DEL EQUIPO</h4>
-                                    <p>Profesionales especializados<br />en cuidado de adultos mayores</p>
-                                </div>
-                            </div>
+                            <img
+                                src={teamImage}
+                                alt="Equipo de profesionales de Círculo Vital"
+                                className="img-fluid rounded-3 shadow-lg"
+                            />
                         </div>
                         <div className="col-lg-6">
                             <h2 className="display-5 fw-bold text-dark-custom mb-4">
@@ -145,9 +145,7 @@ const HomePage = () => {
                                     </p>
                                 </div>
                             </div>
-                            <a href="#contacto" className="btn btn-primary-custom btn-lg">
-                                Conocer Más
-                            </a>
+                            <Link to="/nosotros" className="btn btn-primary-custom btn-lg">Conocer Más</Link>
                         </div>
                     </div>
                 </div>
@@ -282,7 +280,10 @@ const HomePage = () => {
                     <p className="lead mb-4">Contáctanos hoy mismo para una consulta gratuita y descubre cómo podemos ayudarte.</p>
                     <div className="d-flex flex-wrap justify-content-center gap-3">
                         <a href="tel:+5743001234567" className="btn btn-light btn-lg px-5 py-3"><i className="fas fa-phone me-2"></i>Llamar Ahora</a>
-                        <a href="#contacto" className="btn btn-outline-light btn-lg px-5 py-3"><i className="fas fa-calendar me-2"></i>Agendar Cita</a>
+                        {/* ===== CAMBIO AQUÍ: Usamos HashLink en lugar de <a> ===== */}
+                        <HashLink to="/#contacto" className="btn btn-outline-light btn-lg px-5 py-3">
+                            <i className="fas fa-calendar me-2"></i>Agendar Cita
+                        </HashLink>
                     </div>
                 </div>
             </section>

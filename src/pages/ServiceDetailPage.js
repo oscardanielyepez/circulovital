@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { ListGroup } from 'react-bootstrap';
 import { servicesData } from '../data/servicesData';
 
 const ServiceDetailPage = () => {
-    const { serviceId } = useParams(); // Obtiene el 'id' de la URL (ej: 'cuidado-medico')
+    const { serviceId } = useParams();
     const service = servicesData.find(s => s.id === serviceId);
 
-    // Si no se encuentra el servicio, muestra un mensaje
     if (!service) {
         return (
             <div className="container section-spacing text-center">
@@ -42,22 +42,35 @@ const ServiceDetailPage = () => {
                     </div>
 
                     <div className="card">
-                        <div className="card-header h5">Precios y Paquetes</div>
+                        <div className="card-header h5">Precios y planes</div>
                         <div className="card-body">
-                            <ul className="list-group list-group-flush">
+                            <ListGroup variant="flush">
                                 {service.pricing.map((item, index) => (
-                                    <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                                        <span>{item.plan}</span>
-                                        <span className="badge bg-primary-custom rounded-pill fs-6">${item.price} COP</span>
-                                    </li>
+                                    // 1. Añadimos la clase "plan-item" al contenedor principal
+                                    <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center px-0 plan-item">
+                                        <div className="me-3">
+                                            <strong>{item.plan}</strong>
+                                            <p className="mb-0 small text-muted">{item.description}</p>
+                                        </div>
+
+                                        {/* 2. Estructuramos el precio y el botón con las nuevas clases */}
+                                        <div className="plan-action">
+                                            <span className="plan-price badge bg-primary-custom rounded-pill fs-6">
+                                                ${item.price} COP
+                                            </span>
+                                            <Link
+                                                to={`/checkout/${service.id}/${index}`}
+                                                className="plan-button btn btn-sm btn-primary-custom"
+                                            >
+                                                Seleccionar
+                                            </Link>
+                                        </div>
+
+                                    </ListGroup.Item>
                                 ))}
-                            </ul>
-                            <div className="text-center mt-4">
-                                <Link to="/#contacto" className="btn btn-primary-custom btn-lg">Solicitar este Servicio</Link>
-                            </div>
+                            </ListGroup>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
